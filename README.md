@@ -18,6 +18,7 @@ JSON Schema (application/schema+json)には様々な狙いがあり、その一�
 # Copyright Notice
 この部分に関しては翻訳いたしません。
 [原文](http://json-schema.org/latest/json-schema-validation.html)を御覧ください。
+また著作権については原文書に帰属します。
 
 # 目次
 

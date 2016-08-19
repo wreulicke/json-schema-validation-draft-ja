@@ -2,6 +2,7 @@ JSON Schemaの規格の邦訳
 ====================================
 
 JSON Schemaの普及のためにこのリポジトリは作成されました。[WIP]
+この文書は[このリンク](https://tools.ietf.org/html/draft-fge-json-schema-validation-00)の邦訳です。
 
 # 概要
 

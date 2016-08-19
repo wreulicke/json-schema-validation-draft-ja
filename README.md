@@ -94,10 +94,24 @@ JSON Schema (application/schema+json)には様々な狙いがあり、その一�
 
 # 導入 - Introduction
 
-JSON Schemaは与えられたJSONデータに対して特定の基準を満たすことを要求するために利用することができる。
-この仕様に示されるキーワード郡によって、それら基準を具体的に示すことができる。
-また動的なデータの生成を助けるためにキーワード郡が定義されている。
-それらについてもこの仕様に記載する。
+JSON Schemaは与えられたJSONデータに対して特定の基準を満たすことを要求するために利用することが可能です。
+この仕様に示されるキーワード郡によって、それら基準を具体的に示すことが可能です。
+また動的なデータの生成を助けるためにキーワード郡が定義されています。
+それらについてもこの仕様に記載します。
 
-この仕様はJSON Schema Coreの仕様によって定義されている用語が使用される。
-Coreの仕様書についても確認できるような状況で読まれることをお勧めする。
+この仕様はJSON Schema Coreの仕様によって定義されている用語が使用されます。
+Coreの仕様書についても確認できるような状況で読まれることをお勧めします。
+
+# 表記と用語 - Conventions and Terminology
+
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY",
+and "OPTIONAL" in this document are to be interpreted as described in RFC 2119 [RFC2119].
+(和訳しません。)
+
+この仕様においてコンテナ要素（"container instance"）とは配列やオブジェクトを示す用語です。
+また、子要素("children instance")とは配列の要素、もしくはオブジェクトのメンバを表す用語です。
+
+この仕様書ではプロパティセット（"property set"）とはオブジェクトのメンバ名のセットを表す単語です。
+例えば、{ "a": 1, "b": 2 } というJSONオブジェクトのプロパティセットは [ "a", "b" ] です。
+
+配列の要素がもしどの要素の２つ組も等しくない場合、コア仕様にあるように、ユニーク（一意）である、と表現されます。

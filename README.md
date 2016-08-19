@@ -3,14 +3,13 @@ JSON Schemaの規格の邦訳
 
 JSON Schemaの普及のためにこのリポジトリは作成されました。[WIP]
 
-# Abstract
+# 概要
 
-JSON Schema (application/schema+json) has several purposes, one of which is instance validation.
-The validation process may be interactive or non interactive.
-For instance, applications may use JSON Schema to build a user interface enabling interactive content generation 
-in addition to user input checking, or validate data retrieved from various sources.
-This specification describes schema keywords dedicated to validation purposes.
-
+JSON Schema (application/schema+json)には様々な目的があり、その一つがデータのバリデーションです。
+バリデーション処理は対話的に行われるかもしれませんし、対話的には行われないかもしれません。
+例えば、アプリケーションでユーザの入力チェックをしながら動的なコンテンツ生成を可能とするユーザインターフェースを作ったり
+様々なソースから得たデータのバリデーションをしたりするためにJSON Schemaを使うケースが考えられます。
+この仕様書はバリデーション処理に用いられるのスキーマのキーワードについて記述します。
 
 # Status of This Memo
 

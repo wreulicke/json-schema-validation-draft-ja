@@ -115,3 +115,41 @@ and "OPTIONAL" in this document are to be interpreted as described in RFC 2119 [
 例えば、{ "a": 1, "b": 2 } というJSONオブジェクトのプロパティセットは [ "a", "b" ] です。
 
 配列の要素がもしどの要素の２つ組も等しくない場合、コア仕様にあるように、ユニーク（一意）である、と表現されます。
+
+# 相互運用性に関する検討 - Interoperability considerations
+## 文字列の場合のバリデーション - Validation of string instances
+
+It should be noted that the nul character (\x00) is valid in a JSON string.
+An instance to validate may contain a string value with this character,
+regardless of the ability of the underlying programming language to deal with such data.
+
+## * 数値の場合のバリデーション - Validation of numeric instances
+
+The JSON specification does not define any bounds to the scale or precision of numeric values.
+JSON Schema does not define any such bounds either.
+This means that numeric instances processed by JSON Schema can be arbitrarily large and/or have an arbitrarily large decimal part,
+regardless of the ability of the underlying programming language to deal with such data.
+
+## * 正規表現 - Regular expressions
+Two validation keywords, "pattern" and "patternProperties", use regular expressions to express constraints.
+These regular expressions SHOULD be valid according to the ECMA 262 [ecma262] regular expression dialect.
+
+Furthermore, given the high disparity in regular expression constructs support,
+schema authors SHOULD limit themselves to the following regular expression tokens:
+
+* individual Unicode characters, as defined by the JSON specification [RFC4627];
+
+* simple character classes ([abc]), range character classes ([a-z]);
+
+* complemented character classes ([^abc], [^a-z]);
+
+* simple quantifiers: "+" (one or more), "*" (zero or more), "?" (zero or one), and their lazy versions ("+?", "*?", "??");
+
+* range quantifiers: "{x}" (exactly x occurrences), "{x,y}" (at least x, at most y, occurrences), {x,} (x occurrences or more), and their lazy versions;
+
+* the beginning-of-input ("^") and end-of-input ("$") anchors;
+
+* simple grouping ("(...)") and alternation ("|").
+
+Finally, implementations MUST NOT consider that regular expressions are anchored, neither at the beginning nor at the end.
+This means, for instance, that "es" matches "expression".

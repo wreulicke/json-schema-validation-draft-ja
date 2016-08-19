@@ -12,17 +12,8 @@ JSON Schema (application/schema+json)には様々な目的があり、その一�
 この仕様書はバリデーション処理に用いられるのスキーマのキーワードについて記述します。
 
 # Status of This Memo
-
-This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.
-Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).
-Note that other groups may also distribute working documents as Internet-Drafts.
-The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.
-
-
-Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.
-It is inappropriate to use Internet-Drafts as reference material or to cite them other than as “work in progress.”
-
-This Internet-Draft will expire on August 3, 2013.
+この部分に関しては翻訳いたしません。
+[原文](http://json-schema.org/latest/json-schema-validation.html#toc)を御覧ください。
 
 # Copyright Notice
 

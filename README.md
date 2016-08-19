@@ -119,37 +119,31 @@ and "OPTIONAL" in this document are to be interpreted as described in RFC 2119 [
 # 相互運用性に関する検討 - Interoperability considerations
 ## 文字列の場合のバリデーション - Validation of string instances
 
-It should be noted that the nul character (\x00) is valid in a JSON string.
-An instance to validate may contain a string value with this character,
-regardless of the ability of the underlying programming language to deal with such data.
+JSONにおける文字列でヌル文字(\x00)は妥当な値であることに留意すべきです。
+バリデートする値は、プログラミング言語にこのようなデータを取り扱う能力に関わらずこの文字を含んでいるかもしれません。
 
-## * 数値の場合のバリデーション - Validation of numeric instances
+## 数値の場合のバリデーション - Validation of numeric instances
 
-The JSON specification does not define any bounds to the scale or precision of numeric values.
-JSON Schema does not define any such bounds either.
-This means that numeric instances processed by JSON Schema can be arbitrarily large and/or have an arbitrarily large decimal part,
-regardless of the ability of the underlying programming language to deal with such data.
+JSONの仕様では数値の精度や値域に関する定義はされていません。
+JSON SchemaもJSONと同じようにそれらについては定義しません。
+これはプログラミング言語の能力の有無に関わらず、
+JSON Schemaによって与えられた数値は任意の大きさを持つことができ、任意のサイズの小数部を持つことを意味しています。
 
-## * 正規表現 - Regular expressions
-Two validation keywords, "pattern" and "patternProperties", use regular expressions to express constraints.
-These regular expressions SHOULD be valid according to the ECMA 262 [ecma262] regular expression dialect.
+## 正規表現 - Regular expressions
 
-Furthermore, given the high disparity in regular expression constructs support,
-schema authors SHOULD limit themselves to the following regular expression tokens:
+"pattern"および"patternProperties"のバリデーションキーワードでは制約を表現するために正規表現を使います。
+これらの正規表現はECMA262の正規表現の記述方式に従って、正しくなければなりません。
 
-* individual Unicode characters, as defined by the JSON specification [RFC4627];
+さらに、正規表現の実装によって大きな差異をもたらされるため、
+スキーマの著者は次の正規表現トークンの利用のみに限られるべきです。
 
-* simple character classes ([abc]), range character classes ([a-z]);
+* 個別のユニコード文字：JSONの定義に基づく。 - individual Unicode characters, as defined by the JSON specification [RFC4627];
+* 簡易文字クラス - simple character classes ([abc]), range character classes ([a-z]);
+* 相補文字クラス - complemented character classes ([^abc], [^a-z]);
+* 簡易数量子 - simple quantifiers: "+" (one or more), "*" (zero or more), "?" (zero or one), and their lazy versions ("+?", "*?", "??");
+* 範囲数量子 - range quantifiers: "{x}" (exactly x occurrences), "{x,y}" (at least x, at most y, occurrences), {x,} (x occurrences or more), and their lazy versions;
+* 文頭・文末 - the beginning-of-input ("^") and end-of-input ("$") anchors;
+* グループ化と選択子 - simple grouping ("(...)") and alternation ("|").
 
-* complemented character classes ([^abc], [^a-z]);
-
-* simple quantifiers: "+" (one or more), "*" (zero or more), "?" (zero or one), and their lazy versions ("+?", "*?", "??");
-
-* range quantifiers: "{x}" (exactly x occurrences), "{x,y}" (at least x, at most y, occurrences), {x,} (x occurrences or more), and their lazy versions;
-
-* the beginning-of-input ("^") and end-of-input ("$") anchors;
-
-* simple grouping ("(...)") and alternation ("|").
-
-Finally, implementations MUST NOT consider that regular expressions are anchored, neither at the beginning nor at the end.
-This means, for instance, that "es" matches "expression".
+最後に、正規表現が文頭文末どちらにも固定されていると考慮される実装であるべきではありません。
+これは例えば、"es"の場合は"expr*es*sion"にマッチすることを意味します。

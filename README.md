@@ -13,17 +13,11 @@ JSON Schema (application/schema+json)には様々な目的があり、その一�
 
 # Status of This Memo
 この部分に関しては翻訳いたしません。
-[原文](http://json-schema.org/latest/json-schema-validation.html#toc)を御覧ください。
+[原文](http://json-schema.org/latest/json-schema-validation.html)を御覧ください。
 
 # Copyright Notice
-
-Copyright (c) 2013 IETF Trust and the persons identified as the document authors.
-All rights reserved.
-
-This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (http://trustee.ietf.org/license-info) in effect on the date of publication of this document.
-Please review these documents carefully, as they describe your rights and restrictions with respect to this document.
-Code Components extracted from this document must include Simplified BSD License text as described in Section 4.
-e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.
+この部分に関しては翻訳いたしません。
+[原文](http://json-schema.org/latest/json-schema-validation.html)を御覧ください。
 
 # 目次
 

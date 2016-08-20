@@ -1,9 +1,12 @@
-JSON Schemaの規格の邦訳
+[WIP]JSON Schemaの規格の邦訳
 ====================================
 
-JSON Schemaの普及のためにこのリポジトリは作成されました。[WIP]
-この文書は[このリンク](https://tools.ietf.org/html/draft-fge-json-schema-validation-00)の邦訳です。
+JSON Schemaの普及のためにこのリポジトリは作成されました。  
+この文書は[このリンク](https://tools.ietf.org/html/draft-fge-json-schema-validation-00)の邦訳です。  
+一部和訳が適切でない部分がございます。ご了承下さい。  
 
+以下和訳
+====================================
 # 概要
 
 JSON Schema (application/schema+json)には様々な狙いがあり、その一つがデータのバリデーションです。

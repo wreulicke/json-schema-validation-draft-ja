@@ -88,7 +88,7 @@ JSON Schema (application/schema+json)には様々な狙いがあり、その一�
     * Objectの要素 - Object members
         * 定義されている特徴 - Defining characteristic
         * 影響されるキーワード - Implied keywords
-        * 型定義方法 -Calculation
+        * 型同定方法 -Calculation
 * Security considerations
 * Security considerations
 * IANA Considerations
@@ -583,6 +583,135 @@ Property Dependencyの全てのペア(name, propertyset)に対して
 }
 ```
 
+
+# メタデータに関するキーワード - Metadata keywords
+
+## "title" and "description"
+
+### 正常値
+
+これらのキーワードの値は文字列でなければなりません。
+
+### 狙い - Purpose
+
+これらの２つのキーワードはユーザーインターフェースによって生み出されるデータについての情報を付記するために用いることが可能です。
+titleについては短い方が望ましく, descriptionについてはこのSchemaによって記される
+値についての目的を説明を提供するべきです。
+
+これらのキーワードはroot Schemaおよびsub Schemaにおいて使うことが可能です。
+
+## デフォルト - "default"
+
+### 正常値
+
+このキーワードの値には何の制約もありません。
+
+### 狙い - Purpose
+
+このキーワードは部分的なSchemaと一緒に連携してデフォルトのJSONの値を提供される時に用いられます。
+関連するSchemaに対して正常な値をデフォルト値として設定することが望まれます。
+
+# 形式を持つセマンティックバリデーション(?) - Semantic validation with "format"
+
+## 前置き - Foreword
+
+構造的検証単独では値がアプリケーションの要求の全てを満たしているかどうかを検証するには不十分かもしれません。
+（？）"format"では権威あるリソースによって正確に示されたものやそれらRFCもしくはその他外部の仕様によって
+固定されたデータのための意味論的検証の相互運用を満たすために定義されます。
+
+このキーワードに与えられた値はformat attributeと呼ばれます。この値は文字列でなければなりません。
+（？）fotmat attributeは一般的に唯一の値の型のセットを検証することが可能です。
+値の型にこのセットになければ、このformat attributeによるバリデーションおよび値は正常です。
+
+## 実装要件 - Implementation requirements
+
+実装はこの"format"を実装するかもしれません。
+その時次を選ぶべきです。
+* 下に定義される属性のバリデーションを実装すべきです。
+* このキーワードのバリデーションはオプションによって無効にできるべきです。
+
+実装には独自実装のformat attributesを追加するかもしれません。
+当事者間の合意なしに、Schemaの著者はこのキーワードのサポートないし
+独自実装のformat attributesについて期待するべきではありません。
+
+## 定義されている属性 - Defined attributes
+
+### date-time
+
+#### 適応性
+
+この属性は文字列に適応されます。
+
+#### バリデーション
+
+[RFC 3339 section 5.6](https://tools.ietf.org/html/rfc3339#section-5.6)によって定義された
+正しい日付表現であれば正常値です。
+
+### email
+
+#### 適応性
+
+この属性は文字列に適応されます。
+
+#### バリデーション
+
+[RFC5322 section 3.4.1](https://tools.ietf.org/html/rfc5322#section-3.4.1)によって定義された
+正しいInternet email addressであれば正常値です。
+
+### hostname
+
+#### 適応性
+
+この属性は文字列に適応されます。
+
+#### バリデーション
+
+[RFC1034 section3.1](https://tools.ietf.org/html/rfc1034#section-3.1)によって定義された
+正しいInternet host nameであれば正常値です。
+
+### ipv4
+
+#### 適応性
+
+この属性は文字列に適応されます。
+
+#### バリデーション
+
+[RFC2673 section3.2](https://tools.ietf.org/html/rfc2673#section-3.2)によって定義された
+"dotted-quad" ABNF記法による、正しいIPv4であれば正常値です。
+### ipv6
+
+
+#### 適応性
+
+この属性は文字列に適応されます。
+
+#### バリデーション
+
+[RFC2373 section2.2](https://tools.ietf.org/html/rfc2373#section-2.2)によって定義された
+正しいIPv6 addres表記であれば正常値です。
+
+### uri
+
+#### 適応性
+
+この属性は文字列に適応されます。
+
+#### バリデーション
+
+[RFC3986](https://tools.ietf.org/html/rfc3986)によって定義された
+正しいURIであれば正常値です
+
+# 内部構造特定のための参照アルゴリズム - Reference algorithms for calculating children schemas
+## 前置き - Foreword
+## 配列要素 - Array elements
+### 定義されている特徴 - Defining characteristic
+### 影響されるキーワードとデフォルト値について - Implied keywords and default values
+### 型定義方法 - Calculation
+## Objectの要素 - Object members
+### 定義されている特徴 - Defining characteristic
+### 影響されるキーワード - Implied keywords
+### 型同定方法 -Calculation
 
 ==============================================================
 

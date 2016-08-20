@@ -89,7 +89,11 @@ JSON Schema (application/schema+json)には様々な狙いがあり、その一�
         * 定義されている特徴 - Defining characteristic
         * 影響されるキーワード - Implied keywords
         * 型定義方法 -Calculation
-* セキュリティに関する検討 - Security considerations
+* Security considerations
+* Security considerations
+* IANA Considerations
+* References
+* Appendix A.  ChangeLog
 
 （邦訳する予定のないコンテンツについては省略しています。）
 
@@ -578,3 +582,15 @@ Property Dependencyの全てのペア(name, propertyset)に対して
     }
 }
 ```
+
+
+==============================================================
+
+# Security considerations
+    [original](https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-9)
+# IANA Considerations
+    [original](https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-10)
+# References
+    [original](https://tools.ietf.org/html/draft-fge-json-schema-validation-00#section-11)
+# Appendix A.  ChangeLog
+    [original](https://tools.ietf.org/html/draft-fge-json-schema-validation-00#appendix-A)

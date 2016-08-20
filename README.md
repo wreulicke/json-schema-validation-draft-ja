@@ -30,7 +30,7 @@ JSON Schema (application/schema+json)には様々な狙いがあり、その一�
     * 数値の場合のバリデーション - Validation of numeric instances
     * 正規表現 - Regular expressions
 * 一般的なバリーションに関する検討 - General validation considerations 
-    * キーワードとデフォルト型の例 - Keywords and instance primitive types
+    * キーワードとプリミティブ型の例 - Keywords and instance primitive types
     * 相互依存キーワード - Inter-dependent keywords
     * キーワードが存在しない場合のデフォルト値 - Default values for missing keywords
     * コンテナの場合のバリデーション - Validation of container instances
@@ -148,3 +148,33 @@ JSON Schemaによって与えられた数値は任意の大きさを持つこと
 
 最後に、正規表現が文頭文末どちらにも固定されていると考慮される実装であるべきではありません。
 これは例えば、"es"の場合は"expr**es**sion"にマッチすることを意味します。
+
+# 一般的なバリーションに関する検討 - General validation considerations 
+
+## キーワードとプリミティブ型の例 - Keywords and instance primitive types
+
+いくつかのバリデーションキーワードは一つ以上のプリミティブ型に適用されます。
+与えられたキーワードによってバリデーションできない場合、
+このキーワードと値のバリデーションは正常であるべきです。
+
+（？）型に応じてグループ分けされたキーワードのこの仕様は、異なるセクションでバリデーションします。
+全ての型に関するバリデーションを行う、いくつかのキーワードに留意してください。
+
+## 相互依存キーワード - Inter-dependent keywords
+
+値をバリデーションするために他のキーワードの存在（もしくは不在）が影響することがあります。
+この場合、これらの影響を与える全てのキーワードは同じセクションとして扱われます。
+
+## キーワードが存在しない場合のデフォルト値 - Default values for missing keywords
+
+いくつかのキーワードは、なかったとしても、デフォルト値として実装されているとみなされることがあります。
+この場合、デフォルト値は別記されます。
+
+## コンテナの場合のバリデーション - Validation of container instances
+
+コンテナ要素をバリデートするキーワードはそれ自身のみをバリデートし、子要素についてはいません。
+（？）いくつかのキーワードは, バリデーションしますが、それらは子要素が正しいかどうかを計算するために必要な情報を含んでいます。
+子要素に関するSchema定義は分離して説明されます。
+
+配列の要素は１つのスキーマに対してのみバリデートする必要があることに対し
+オブジェクトのメンバは一つ以上のスキーマに対してバリデートする必要があることに注意してください。

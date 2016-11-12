@@ -491,9 +491,7 @@ Schema Dependecyの全てのペア（name, schema）に対して、この名前�
 
 ##### Property Dependency
 
-Property Dependencyの全てのペア(name, propertyset)に対して
-（？）与えられたオブジェクトはこの名前によるプロパティを持っているならば、
-（？）プロパティセットと同じ名前を持つプロパティを持っていなければなりません。
+プロパティ依存関係の各（name、propertyset）ペアに対して、インスタンスがこの名前でプロパティを持つ場合、それはpropertysetと同じ名前を持つプロパティも持つ必要があります。
 
 ## その他型におけるキーワード - Validation keywords for any instance type
 
